@@ -5,14 +5,14 @@ export default function ProfileCard({ followers, setFollowers }) {
     <div className="p-6 rounded-2xl shadow-lg ">
       <div className="flex items-center gap-4">
         <img
-          src="https://i.pravatar.cc/150"
+          src="../image.png"
           alt="profile"
           className="w-20 h-20 rounded-full shadow"
         />
         <div>
-          <h2 className="text-2xl font-bold">Hassan Ahmed</h2>
-          <p className="text-gray-600">Frontend Developer</p>
-          <p className="text-gray-500 text-sm">hassan@example.com</p>
+          <h2 className="text-2xl font-bold">Hassan Ali</h2>
+          <p className="">Frontend Developer</p>
+          <p className=" text-sm">hassan@example.com</p>
         </div>
       </div>
 

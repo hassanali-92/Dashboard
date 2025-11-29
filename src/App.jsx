@@ -1,33 +1,22 @@
-import React, { useState } from "react";
-import "./index.css";
+import React from 'react'
+import Home from './temp'
+import { Route, Routes } from 'react-router-dom'
+import Profile from './componentes/Profile'
+import NotFound from './componentes/Notfound'
 
-import ThemeToggle from "./componentes/ThemeToggle";
-import ProfileCard from "./componentes/ProfileCard";
-import HobbyList from "./componentes/HobbyList";
 
-export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [followers, setFollowers] = useState(0);
-
-  const hobbies = ["Coding", "Cricket", "Gaming", "Traveling"];
-
+const App = () => {
   return (
-    <div
-      className={
-        "min-h-screen p-6 transition-all " +
-        (darkMode ? "bg-neutral-900 text-white" : "bg-gray-100 text-black")
-      }
-    >
-      {/* Theme Toggle */}
-      <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/pro' element={<Profile/>}/>
+        <Route path='*' element={<NotFound/>}/>
 
-      <div className="max-w-xl mx-auto space-y-6">
-        {/* Profile Card Component */}
-        <ProfileCard followers={followers} setFollowers={setFollowers} />
-
-        {/* Hobby List Component */}
-        <HobbyList hobbies={hobbies} darkMode={darkMode} />
-      </div>
+      </Routes>
+      {/* <Home/> */}
     </div>
-  );
+  )
 }
+
+export default App
